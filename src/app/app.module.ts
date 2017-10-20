@@ -1,3 +1,4 @@
+import { DashboardComponent } from './dashboard.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -16,13 +17,23 @@ import {HeroesComponent} from './heroes.component';
       {
         path: 'heroes',
         component: HeroesComponent
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: '',
+        redirectTo: '/dashboard',
+        pathMatch: 'full'
       }
     ])
   ],
   declarations: [
     AppComponent,
     HeroDetailComponent,
-    HeroesComponent
+    HeroesComponent,
+    DashboardComponent
   ],
   bootstrap: [ AppComponent ]
 })
