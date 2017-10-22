@@ -1,3 +1,4 @@
+import { HeroService } from './hero.service';
 import { DashboardComponent } from './dashboard.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +24,10 @@ import {HeroesComponent} from './heroes.component';
         component: DashboardComponent
       },
       {
+        path: 'detail/:id',
+        component: HeroDetailComponent
+      },
+      {
         path: '',
         redirectTo: '/dashboard',
         pathMatch: 'full'
@@ -34,6 +39,9 @@ import {HeroesComponent} from './heroes.component';
     HeroDetailComponent,
     HeroesComponent,
     DashboardComponent
+  ],
+  providers: [
+    HeroService
   ],
   bootstrap: [ AppComponent ]
 })
